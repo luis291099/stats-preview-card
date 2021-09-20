@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+$very-dark-blue:hsl(233, 47%, 7%);
+$dark-desaturated-blue: hsl(244, 38%, 16%);
+$soft-violet:hsl(277, 64%, 61%);
+$color-white: hsl(0, 0%, 100%);
+$slightly-transparent-white:hsla(0, 0%, 100%, 0.75);
+
+body {
+    background-color: $very-dark-blue;
+    font-family: 'Inter', sans-serif;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.card {
+    background-color: $dark-desaturated-blue;
+    display: flex;
+    width: 1100px;
+
+    &__body {
+        flex-basis: 55%;
+        color: white;
+        padding: 40px 90px 60px 60px;
+    }
+
+    &__title {
+        color: $color-white;
+        font-size: 35px;
+        font-weight: 700;
+
+        span {
+            color: $soft-violet;
+        }
+    }
+
+    &__txt {
+        color: $slightly-transparent-white;
+        padding-right: 100px;
+        line-height: 1.5;
+        text-align: start;
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+
+    &__img {
+        flex-basis: 45%;
+        height: 440px;
+        background-image: url('./../images/image-header-desktop.jpg');
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: $soft-violet;
+            opacity: 0.6;
+        }
+    }
+
+    &__stats {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        div:not(:last-child) {
+            margin-right: 60px;
+        }
+
+        h2 {
+            padding: 0;
+            margin-bottom: 5px;
+            font-size: 20px;
+        }
+
+        p {
+            text-transform: uppercase;
+            color: $slightly-transparent-white;
+            padding: 0;
+            margin: 0;
+            font-size: 12px;
+        }
+    }
+}
